@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:wireguard_flutter_plus/wireguard_flutter_platform_interface.dart';
 
-import '../data/services/vpn_service.dart';
+import 'package:vpn4k/data/services/vpn_service.dart';
 
 class VpnState {
   final bool isVPNOn;
@@ -150,16 +150,17 @@ class VpnNotifier extends Notifier<VpnState> {
     });
 
     _statsSubscription = _vpnService.trafficStatsSnapshot.listen((stats) {
-      final currentIsOn = state.isVPNOn;
 
       _secondsTimer?.cancel();
-      _secondsTimer = Timer(const Duration(seconds: 1), () {
+      _secondsTimer ??= Timer.periodic(const Duration(seconds: 1), (_) {
+        final currentIsOn = state.isVPNOn;
         final currentTotalSeconds = state.totalSecondsConnected;
         state = state.copyWith(
           totalSecondsConnected: currentIsOn ? currentTotalSeconds + 1 : 0,
         );
       });
 
+      final currentIsOn = state.isVPNOn;
       final totalUpload = currentIsOn ? (stats['totalUpload'] ?? 0).toDouble() : 0;
       final totalDownload = currentIsOn ? (stats['totalDownload'] ?? 0).toDouble() : 0;
       final uploadSpeed = currentIsOn ? (stats['uploadSpeed'] ?? 0).toDouble() : 0;
@@ -198,6 +199,8 @@ class VpnNotifier extends Notifier<VpnState> {
       double newMaxYReceived = state.maxYReceived;
       if (totalUpload > state.maxYSent) {
         newMaxYSent = totalUpload * 1.2;
+      }
+      if (totalDownload > state.maxYReceived) {
         newMaxYReceived = totalDownload * 1.2;
       }
 
@@ -233,7 +236,7 @@ class VpnNotifier extends Notifier<VpnState> {
   Future<void> pickAndLoadFile() async {
     final result = await FilePicker.pickFiles(
       type: FileType.custom,
-      allowedExtensions: [".conf"],
+      allowedExtensions: ["conf"],
     );
 
     if (result != null) {

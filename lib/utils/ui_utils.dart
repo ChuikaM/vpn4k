@@ -11,9 +11,11 @@ String? getIconPathByStage(VpnStage stage) {
     VpnStage.preparing: pathIconInProgress,
     VpnStage.connecting: pathIconInProgress,
     VpnStage.connected: pathIconActive,
+    VpnStage.denied: pathIconInactive,
+    VpnStage.noConnection: pathIconInactive,
   };
 
-  return stageIcons[stage];
+  return stageIcons[stage] ?? pathIconInactive;
 }
 
 String? getTextStage(VpnStage stage) {

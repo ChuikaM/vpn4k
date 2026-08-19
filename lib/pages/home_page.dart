@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/vpn_provider.dart';
-import '../../../utils/ui_utils.dart';
+import 'package:vpn4k/providers/vpn_provider.dart';
+import 'package:vpn4k/utils/ui_utils.dart';
 
 class HomeTab extends ConsumerWidget {
   const HomeTab({super.key});
@@ -28,9 +28,11 @@ class HomeTab extends ConsumerWidget {
               Column(
                 spacing: availableHeight / 20,
                 children: [
-                  SvgPicture.asset(getIconPathByStage(vpnState.stage)!),
+                  SvgPicture.asset(
+                    getIconPathByStage(vpnState.stage) ?? "assets/icon_inactive.svg",
+                  ),
                   Text(
-                    getTextStage(vpnState.stage)!,
+                    getTextStage(vpnState.stage) ?? vpnState.stage.name,
                     style: const TextStyle(color: secondaryColor, fontSize: 12),
                   )
                 ],

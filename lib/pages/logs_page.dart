@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/vpn_provider.dart';
+import 'package:vpn4k/providers/vpn_provider.dart';
 
 class LogsTab extends ConsumerStatefulWidget {
   const LogsTab({super.key});
