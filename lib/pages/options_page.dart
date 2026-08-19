@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/vpn_provider.dart';
+import 'package:vpn4k/providers/vpn_provider.dart';
 
 class OptionsTab extends ConsumerStatefulWidget {
   const OptionsTab({super.key});
@@ -30,7 +30,6 @@ class _OptionsTabState extends ConsumerState<OptionsTab> {
     final vpnState = ref.watch(vpnProvider);
     final vpnNotifier = ref.read(vpnProvider.notifier);
 
-    // Reactively sync the TextField controller with the Riverpod state.
     if (_controllerServerAddress.text != vpnState.serverAddress) {
       _controllerServerAddress.text = vpnState.serverAddress;
     }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../providers/vpn_provider.dart';
+import 'package:vpn4k/providers/vpn_provider.dart';
 import 'pages/home_page.dart';
 import 'pages/stats_page.dart';
 import 'pages/options_page.dart';
