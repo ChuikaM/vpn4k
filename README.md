@@ -1,6 +1,6 @@
 # vpn4k
 
-![Flutter](https://img.shields.io/badge/Flutter-3.35.1-02569B?style=for-the-badge&logo=flutter)
+![Flutter](https://img.shields.io/badge/Flutter-3.47.0-02569B?style=for-the-badge&logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Android-green?style=for-the-badge&logo=android)
@@ -51,38 +51,38 @@ A clean, minimalist VPN client built with Flutter. Securely connect to your Wire
 
 ### Installation
 
-1.**Clone the repository**
+1. **Clone the repository**
 
-```bash
-git clone https://github.com/your-username/vpn4k.git
-cd vpn4k
-```
+    ```bash
+    git clone https://github.com/your-username/vpn4k.git
+    cd vpn4k
+    ```
 
-2.**Install dependencies**
+2. **Install dependencies**
 
-```bash
-flutter pub get
-```
+    ```bash
+    flutter pub get
+    ```
 
-3.**Run the app**
+3. **Run the app**
 
-```bash
-flutter run
-```
+    ```bash
+    flutter run
+    ```
 
 ## Building for Release
 
 ### Android APK
 
-```bash
-flutter build apk --release
-```
+    ```bash
+    flutter build apk --release
+    ```
 
 ### Android App Bundle (for Play Store)
 
-```bash
-flutter build appbundle --release
-```
+    ```bash
+    flutter build appbundle --release
+    ```
 
 ## Project Structure
 

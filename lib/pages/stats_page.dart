@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
- import 'package:vpn4k/providers/vpn_provider.dart';
- import 'package:vpn4k/utils/time_converter.dart';
+import 'package:vpn4k/providers/vpn_provider.dart';
+import 'package:vpn4k/utils/time_converter.dart';
 
 class StatsTab extends ConsumerWidget {
   const StatsTab({super.key});
