@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:wireguard_flutter_plus/wireguard_flutter_platform_interface.dart';
 
-import '../vpn_service.dart';
+import '../data/services/vpn_service.dart';
 
 class VpnState {
   final bool isVPNOn;

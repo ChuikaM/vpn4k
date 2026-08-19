@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../providers/vpn_provider.dart';
-import '../../../utils/ui_utils.dart'; // Contains getIconPathByStage & getTextStage
+import '../../../utils/ui_utils.dart';
 
 class HomeTab extends ConsumerWidget {
   const HomeTab({super.key});
